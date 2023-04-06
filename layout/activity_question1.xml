@@ -5,6 +5,7 @@
     android:id="@+id/constraintlyt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Question1">
 
     <Toolbar
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/app_name"
+        android:text="Quizzer"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -59,16 +60,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/qcount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="5/10"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -81,6 +72,7 @@
         android:layout_marginBottom="1dp"
         android:orientation="vertical"
         android:padding="16dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,27 +85,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/buttonborder"
             android:backgroundTint="#989898"
-            android:text="81" />
+            android:text="81"
+            app:cornerRadius="15dp" />
 
         <Button
             android:id="@+id/op2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/buttonborder"
             android:backgroundTint="#989898"
-            android:text="243" />
+            android:text="243"
+            app:cornerRadius="15dp" />
 
         <Button
             android:id="@+id/opt3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/buttonborder"
             android:backgroundTint="#989898"
             android:text="12"
+            app:cornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,15 +114,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/buttonborder"
             android:backgroundTint="#989898"
             android:text="27"
+            app:cornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/prevbtn"
+        android:id="@+id/submitbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -154,7 +146,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/prevbtn"
+        app:layout_constraintStart_toEndOf="@+id/submitbtn"
         app:layout_constraintTop_toBottomOf="@+id/option_container" />
 
 
