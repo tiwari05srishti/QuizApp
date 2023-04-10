@@ -1,5 +1,7 @@
 package com.example.qyuizzer;
 
+import static java.sql.Types.NULL;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -69,6 +71,9 @@ public class Question1 extends AppCompatActivity implements View.OnClickListener
         Button clickedBtn = (Button) view;
 
         if(clickedBtn.getId()==R.id.submitbtn){
+            if(selectedAns.equals(QuestionAnswer.answers[currQ])){
+                score++;
+            }
             finishQuiz();
         }
         else if(clickedBtn.getId()==R.id.nextbtn){
@@ -96,30 +101,22 @@ public class Question1 extends AppCompatActivity implements View.OnClickListener
         op3.setText(QuestionAnswer.options[currQ][2]);
         op4.setText(QuestionAnswer.options[currQ][3]);
 
-
     }
-
 
     void finishQuiz(){
 
         score_string = "0"+ score;
-        //for updating high score if current score is greater then prev high score
-
-//        if(score>highscore){
-//            highscore=score;
-//        }
-        // for saving highest score
 
         SharedPreferences sharedPreferences = getSharedPreferences("HIGHSCORE" , MODE_PRIVATE);
         SharedPreferences.Editor spe = sharedPreferences.edit();
         int prevHS = sharedPreferences.getInt("KEY_HIGHSCORE", 0);
         if(prevHS<score){
             highscore=score;
-        }else{
+        }else if (prevHS >= score){
             highscore=prevHS;
         }
         spe.putInt(Key_highscore , highscore);
-        spe.apply();
+        spe.commit();
         Intent fscore = new Intent(Question1.this , Finalscore.class);
         fscore.putExtra(Extra_number , score_string);
         startActivity(fscore);
